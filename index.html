@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html> 
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
   <title>airaes.pt</title> 
-  <link rel="stylesheet" type="text/css" href="website.css"> 
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/> 
-  <link rel="shortcut icon" type="image/png" href="IMAGEURL"/> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <body> 
-    <iframe src="https://jfairaes.wixsite.com/website" style="position:fixed; top:-50px; left:0px; bottom:0px; right:0px; width:100%; height: calc(100% + 60px); border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"> </iframe> </body> <script type="text/javascript"> 
-  <!-- if (screen.width <= 699) { document.location = "https://jfairaes.wixsite.com/website"; } //--> 
-  </script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  
+  <style>
+    /* Remove todas as margens e barras de scroll do navegador */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Contentor que "prende" o iframe e corta o que sobra */
+    .wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 999999;
+    }
+
+    /* O Iframe ajustado com os cortes que pediste */
+    iframe {
+      position: absolute;
+      top: -50px;    /* Esconde 50px do topo */
+      left: 0;
+      width: 100%;   /* Ajusta sempre à largura do ecrã */
+      height: calc(100% + 60px); /* Compensa os 50px de cima + 10px de baixo */
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <iframe src="https://jfairaes.wixsite.com/website" allowfullscreen></iframe>
+  </div>
+
+</body>
 </html>
