@@ -2,46 +2,62 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>airaes.pt</title> 
-  <link rel="shortcut icon" type="image/png" href="/favicon.png"/> 
+  <!-- O segredo para telemóvel está nesta meta tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
-  
+  <title>airaes.pt</title> 
+  <link rel="shortcut icon" type="image/png" href="/favicon.png""")/>> 
+
   <style>
-    /* Remove todas as margens e barras de scroll do navegador */
+    /* Reset total do documento */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      overflow: hidden; /* Impede o scroll duplo */
+      background-color: #ffffff;
     }
 
-    /* Contentor que "prende" o iframe e corta o que sobra */
-    .wrapper {
+    /* Contentor que serve de moldura fixa */
+    .wix-frame-wrapper {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      z-index: 999999;
+      z-index: 9999;
     }
 
-    /* O Iframe ajustado com os cortes que pediste */
-    iframe {
+    /* Iframe com ajuste forçado de largura */
+    .wix-iframe {
       position: absolute;
-      top: -50px;    /* Esconde 50px do topo */
+      /* Aplica o corte de 50px no topo */
+      top: -50px; 
       left: 0;
-      width: 100%;   /* Ajusta sempre à largura do ecrã */
-      height: calc(100% + 60px); /* Compensa os 50px de cima + 10px de baixo */
+      
+      /* Força a largura a ser 100% do ecrã sem zoom out */
+      width: 100%;
+      min-width: 100%;
+      
+      /* Altura compensada para o corte de 50px topo + 10px fundo */
+      height: calc(100% + 60px);
+      
       border: none;
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="wrapper">
-    <iframe src="https://jfairaes.wixsite.com/website" allowfullscreen></iframe>
+  <div class="wix-frame-wrapper">
+    <iframe 
+      src="https://jfairaes.wixsite.com" 
+      class="wix-iframe"
+      id="wixSite"
+      allowfullscreen>
+    </iframe>
   </div>
 
 </body>
