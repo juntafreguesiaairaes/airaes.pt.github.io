@@ -2,69 +2,56 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <!-- Esta linha impede o "zoom out" que vês na tua imagem -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>airaes.pt</title>
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
-
     <style>
-        /* Reset absoluto para evitar espaços em branco */
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Impede o scroll da página "mãe" */
-            background-color: #ffffff;
+            overflow: hidden;
+            background-color: #000; /* Cor de fundo para evitar bordas brancas */
         }
 
-        /* Contentor que corta o topo e o fundo */
-        .viewport-container {
+        .container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            display: block;
         }
 
-        /* O Iframe ajustado */
         iframe {
             position: absolute;
-            /* O "puxão" de 50px para cima */
+            /* Aplica o corte de 50px no topo */
             top: -50px; 
             left: 0;
             
-            /* Força a largura total do ecrã */
+            /* Força a largura total */
             width: 100% !important;
             min-width: 100% !important;
             
-            /* Altura total + os 50px do topo + 10px do fundo */
+            /* Altura compensada (100% + 50px topo + 10px fundo) */
             height: calc(100% + 60px) !important;
             
             border: none;
-            outline: none;
+            
+            /* Esta linha impede o efeito "miniatura" em alguns browsers */
+            transform: scale(1);
+            transform-origin: 0 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="viewport-container">
+    <div class="container">
         <iframe 
             src="https://jfairaes.wixsite.com/website" 
-            id="wix-site"
             allowfullscreen>
         </iframe>
     </div>
 
 </body>
 </html>
-Use o código com cuidado.
-
-Por que é que este código vai funcionar onde os outros falharam?
-shrink-to-fit=no: Adicionei esta instrução na meta tag. Ela impede especificamente que o iOS e o Chrome Mobile tentem "ajustar o conteúdo à janela" (o que causava o efeito de site minúsculo que mostraste na foto).
