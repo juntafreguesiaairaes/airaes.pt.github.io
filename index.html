@@ -1,57 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>airaes.pt</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000; /* Cor de fundo para evitar bordas brancas */
-        }
-
-        .container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        iframe {
-            position: absolute;
-            /* Aplica o corte de 50px no topo */
-            top: -50px; 
-            left: 0;
-            
-            /* Força a largura total */
-            width: 100% !important;
-            min-width: 100% !important;
-            
-            /* Altura compensada (100% + 50px topo + 10px fundo) */
-            height: calc(100% + 60px) !important;
-            
-            border: none;
-            
-            /* Esta linha impede o efeito "miniatura" em alguns browsers */
-            transform: scale(1);
-            transform-origin: 0 0;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <iframe 
-            src="https://jfairaes.wixsite.com/website" 
-            allowfullscreen>
-        </iframe>
-    </div>
-
-</body>
+<html> 
+  <title>airaes.pt</title> 
+  <link rel="stylesheet" type="text/css" href="website.css"> 
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/> 
+  <link rel="shortcut icon" type="image/png" href="IMAGEURL"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <body> 
+    <iframe src="https://jfairaes.wixsite.com/website" style="position:fixed; top:-50px; left:0px; bottom:0px; right:0px; width:100%; height:105%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"> </iframe> </body> <script type="text/javascript"> 
+  <!-- if (screen.width <= 699) { document.location = "https://jfairaes.wixsite.com/website"; } //--> 
+  </script> 
 </html>
